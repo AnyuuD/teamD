@@ -229,7 +229,7 @@ function preload() {
   //문제 2
   imaRobot = loadImage("textCaptcha/imaRobot.png");
   //----로딩
-  textDisabledImg = loadImage("textCaptcha/textDisabledImg.png"); //텍스트캡챠용 반투명이미지
+  textDisabledImg = loadImage("textCaptcha/textdisabledImg.png");
   disabledImg = loadImage("disabled/disabledImg.png");
   abledImg = loadImage("disabled/abledImg.png");
   logo = loadImage("disabled/logo.png");
