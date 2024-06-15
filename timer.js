@@ -69,5 +69,7 @@ class Timer {
     this.isRunning = true; // 타이머 다시 시작
   }
 
-  //
+  isLessThan(seconds) {
+    return this.update() <= seconds * 1000; // 남은 시간이 지정된 초 이하인지 확인
+  }
 }

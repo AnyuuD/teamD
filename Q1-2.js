@@ -130,7 +130,7 @@ class Q1 {
     const enteredText = this.input.value();
 
     if (this.correctAnswers.includes(enteredText)) {
-      score += 5; // 점수 5점 추가
+      score += 5.5; // 점수 5점 추가
       this.popUp = this.popUpS; // 올바른 텍스트 팝업
       this.popUp2 = this.resultHuman; // 인간팝업
       this.currentPopupText = this.successText;

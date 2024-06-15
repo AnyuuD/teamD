@@ -11,6 +11,7 @@ let popUpL;
 let popUpM;
 let popUpS;
 let popUpStar;
+let popUpRed;
 let 결과_로딩;
 let 결과_로딩창;
 let 결과_Frame;
@@ -166,6 +167,7 @@ function preload() {
   popUpM = loadImage("popUp/popUpM.png");
   popUpS = loadImage("popUp/popUpS.png");
   popUpStar = loadImage("popUp/popUpStar.png");
+  popUpRed = loadImage("popUp/popUpRed.png");
 
   //----- 채현 추가
 
@@ -229,7 +231,7 @@ function preload() {
   //문제 2
   imaRobot = loadImage("textCaptcha/imaRobot.png");
   //----로딩
-  textDisabledImg = loadImage("textCaptcha/textdisabledImg.png");
+  textDisabledImg = loadImage("disabled/textdisabledImg.png");
   disabledImg = loadImage("disabled/disabledImg.png");
   abledImg = loadImage("disabled/abledImg.png");
   logo = loadImage("disabled/logo.png");
@@ -405,7 +407,7 @@ function draw() {
     case 2: //전반부 문제1
       nameinput.hide(); //이름입력창 더이상 안보이게 가려주는 역할
       nameinput_button.hide();
-      image(성명입력_background, width / 2, height / 2);
+      image(bg, width / 2, height / 2);
 
       //bar 문제1
       rectMode(CORNER);
@@ -421,9 +423,12 @@ function draw() {
         q1.display();
       }
 
-      text("문제1", 200, 100);
-      image(popUpXL, 180, 650); // 타이머
-      timer.display(190, 650); // 타이머
+      if (timer.isLessThan(3)) {
+        image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
+      } else {
+        image(popUpXL, 180, 650); // 남은 시간이 3초 이상일 때
+      }
+      timer.display(190, 650);
 
       noCursor();
       cursorChange();
@@ -432,7 +437,7 @@ function draw() {
     case 3: //전반부 문제2
       q1.input.hide();
 
-      image(성명입력_background, width / 2, height / 2);
+      image(bg, width / 2, height / 2);
 
       //bar문제2
       rectMode(CORNER);
@@ -447,9 +452,12 @@ function draw() {
       q2.input.show(); // input 창을 보여줌
       q2.display();
 
-      text("문제2", 200, 100);
-      image(popUpXL, 180, 650); // 타이머
-      timer.display(190, 650); // 타이머
+      if (timer.isLessThan(3)) {
+        image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
+      } else {
+        image(popUpXL, 180, 650); // 남은 시간이 3초 이상일 때
+      }
+      timer.display(190, 650);
 
       noCursor();
       cursorChange();
@@ -471,7 +479,7 @@ function draw() {
       text("3/9", width / 2 + 220, height / 2 - 330);
       //
 
-      image(성명입력_background, width / 2, height / 2);
+      image(bg, width / 2, height / 2);
       image(푸들, width / 2, height / 2 + 20);
 
       for (let box of boxes) {
@@ -555,9 +563,14 @@ function draw() {
         clickedBoxes.length == 4
       ) {
       }
-      text("문제3", 200, 100);
-      image(popUpXL, 180, 650); // 타이머
-      timer.display(190, 650); // 타이머
+
+      if (timer.isLessThan(3)) {
+        image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
+      } else {
+        image(popUpXL, 180, 650); // 남은 시간이 3초 이상일 때
+      }
+      timer.display(190, 650);
+
       if (timer.isFinished()) {
         if (!successPopupFlag) {
           failedPopupFlag = true;
@@ -582,7 +595,7 @@ function draw() {
       text("4/9", width / 2 + 220, height / 2 - 330);
       //
 
-      image(성명입력_background, width / 2, height / 2);
+      image(bg, width / 2, height / 2);
       image(여자, width / 2, height / 2 + 20);
 
       for (let box of boxes) {
@@ -666,9 +679,12 @@ function draw() {
       ) {
       }
 
-      text("문제4", 200, 100);
-      image(popUpXL, 180, 650); // 타이머
-      timer.display(190, 650); // 타이머
+      if (timer.isLessThan(3)) {
+        image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
+      } else {
+        image(popUpXL, 180, 650); // 남은 시간이 3초 이상일 때
+      }
+      timer.display(190, 650);
 
       if (timer.isFinished()) {
         if (!successPopupFlag) {
@@ -700,8 +716,12 @@ function draw() {
       text("5/9", width / 2 + 220, height / 2 - 330);
       //
 
-      image(popUpXL, 180, 650); // 타이머
-      timer.display(190, 650); // 타이머
+      if (timer.isLessThan(3)) {
+        image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
+      } else {
+        image(popUpXL, 180, 650); // 남은 시간이 3초 이상일 때
+      }
+      timer.display(190, 650);
 
       noCursor();
       cursorChange();
@@ -723,8 +743,12 @@ function draw() {
       text("6/9", width / 2 + 220, height / 2 - 330);
       //
 
-      image(popUpXL, 180, 650); // 타이머
-      timer.display(190, 650); // 타이머
+      if (timer.isLessThan(3)) {
+        image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
+      } else {
+        image(popUpXL, 180, 650); // 남은 시간이 3초 이상일 때
+      }
+      timer.display(190, 650);
 
       noCursor();
       cursorChange();
@@ -741,8 +765,12 @@ function draw() {
       textSize(35);
       text("7/9", width / 2 + 220, height / 2 - 330);
 
-      image(popUpXL, 180, 650); // 타이머
-      timer.display(190, 650); // 타이머
+      if (timer.isLessThan(3)) {
+        image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
+      } else {
+        image(popUpXL, 180, 650); // 남은 시간이 3초 이상일 때
+      }
+      timer.display(190, 650);
 
       noCursor();
       cursorChange();
@@ -759,8 +787,12 @@ function draw() {
       textSize(35);
       text("8/9", width / 2 + 220, height / 2 - 330);
 
-      image(popUpXL, 180, 650); // 타이머
-      timer.display(190, 650); // 타이머
+      if (timer.isLessThan(3)) {
+        image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
+      } else {
+        image(popUpXL, 180, 650); // 남은 시간이 3초 이상일 때
+      }
+      timer.display(190, 650);
 
       noCursor();
       cursorChange();
@@ -775,7 +807,7 @@ function draw() {
       text("9/9", width / 2 + 220, height / 2 - 330);
       //
 
-      image(성명입력_background, width / 2, height / 2);
+      image(bg, width / 2, height / 2);
       image(교수님, width / 2, height / 2 + 20);
 
       for (let box of boxes) {
@@ -856,9 +888,14 @@ function draw() {
         clickedBoxes.length == 3
       ) {
       }
-      text("문제9", 200, 100);
-      image(popUpXL, 180, 650); // 타이머
-      timer.display(190, 650); // 타이머
+
+      if (timer.isLessThan(3)) {
+        image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
+      } else {
+        image(popUpXL, 180, 650); // 남은 시간이 3초 이상일 때
+      }
+      timer.display(190, 650);
+
       if (timer.isFinished()) {
         if (!successPopupFlag) {
           failedPopupFlag = true;
@@ -882,7 +919,7 @@ function draw() {
       if (!this.state11StartTime) {
         this.state11StartTime = millis(); // case 11에 진입 시 시작 시간 초기화
       }
-      image(성명입력_background, width / 2, height / 2);
+      image(bg, width / 2, height / 2);
       image(성명입력_imnotaRobot, width / 2 + 30, height / 2 + 100);
       image(결과_로딩창, width / 2, height / 2);
 
