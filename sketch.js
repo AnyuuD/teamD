@@ -1063,7 +1063,7 @@ function mouseClicked() {
       if (successPopupFlag || failedPopupFlag) {
         initializeBoxes();
         문제4다음버튼 = true;
-        timer = new Timer(11000);
+        timer = new Timer(16000);
         successPopupFlag = false;
         failedPopupFlag = false;
       } else {
