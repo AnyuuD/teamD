@@ -97,7 +97,7 @@ let imageStartTime1 = null;
 let imageStartTime2 = null;
 let imageLogoRotation = 0;
 
-let changeInterval = 30; // 이미지가 깜빡이는 간격(프레임 수)
+let changeInterval = 16; // 이미지가 깜빡이는 간격(프레임 수) 30에서 200밀리초에 가까운 16로 변경
 let currentImage = "A";
 
 ///////////////////////////////////////
@@ -335,7 +335,7 @@ function setup() {
     abledImg,
     logo, //돌아가는 로고
     loadImage("textCaptcha/imaRobot.png"),
-    "아니..로봇이세요??", // 성공 시 텍스트
+    "아니..로봇이세요??\n정답이긴 한데...", // 성공 시 텍스트
     "로봇도 알아보는 텍스트를 틀렸는데요?!" // 실패 시 텍스트
   );
   q2.input.hide(); // 초반에 input 창 숨기기
