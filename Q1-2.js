@@ -166,10 +166,10 @@ class Q1 {
 
     // 버튼 클릭 이벤트
     if (
-      mx > buttonX - 80 &&
-      mx < buttonX + buttonWidth - 60 &&
+      mx > buttonX - 40 &&
+      mx < buttonX + buttonWidth - 40 &&
       my > buttonY - 30 &&
-      my < buttonY + buttonHeight
+      my < buttonY + buttonHeight - 20
     ) {
       if (!this.buttonActivated) {
         // 그린 버튼 클릭 (확인 버튼이 아직 클릭되지 않은 경우)

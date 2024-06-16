@@ -141,7 +141,7 @@ function cursorChange() {
   }
 
   if (state == 2 || state == 3) {
-    if (x >= 757 && x <= 837 && y >= 473 && y <= 553) {
+    if (x >= 759 && x <= 819 && y >= 495 && y <= 535) {
       onButton = true;
     } else {
       onButton = false;

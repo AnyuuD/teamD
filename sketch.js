@@ -100,7 +100,7 @@ let imageLogoRotation = 0;
 let changeInterval = 16; // 이미지가 깜빡이는 간격(프레임 수) 30에서 200밀리초에 가까운 16로 변경
 let currentImage = "A";
 
-let C = false;
+let C =false
 
 ///////////////////////////////////////
 
@@ -244,9 +244,7 @@ function preload() {
 //==========================================================================
 
 function setup() {
-  let canvas = createCanvas(1280, 832);
-
-  textFont(font);
+  createCanvas(1280, 832);
   textFont(font);
   textAlign(CENTER, CENTER);
   imageMode(CENTER);
@@ -487,13 +485,14 @@ function draw() {
       image(푸들, width / 2, height / 2 + 20);
 
       if (!C && timer.isFinished()) {
-        timer.timeOut();
-      }
+        timer.timeOut()}
+
 
       for (let box of boxes) {
         box.show();
       }
       if (successPopupFlag) {
+
         image(successPopup1, 1003, 178, 337, 323);
         image(resultHuman, 858 + 158, 493 + 76);
         image(imgDisabled, width / 2 + 10, height / 2 + 10);
@@ -505,7 +504,7 @@ function draw() {
         let progress = (millis() - imageStartTime) / 이미지전환시간;
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
-          image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
+          image(buttonWait,width / 2 + 117, height / 2 + 184+20);
           image(현재이미지, width / 2 + 11, height / 2);
         }
         imageLogoRotation = progress * TWO_PI;
@@ -541,7 +540,7 @@ function draw() {
         let progress = (millis() - imageStartTime) / 이미지전환시간;
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
-          image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
+          image(buttonWait,width / 2 + 117, height / 2 + 184+20);
           image(현재이미지, width / 2 + 11, height / 2);
         }
         imageLogoRotation = progress * TWO_PI;
@@ -585,6 +584,8 @@ function draw() {
         if (!successPopupFlag) {
           failedPopupFlag = true;
         }
+        // state = 5;
+        // timer.reset(11000);
       } // 타이머
 
       if (문제3다음버튼) {
@@ -610,8 +611,8 @@ function draw() {
       image(여자, width / 2, height / 2 + 20);
 
       if (!C && timer.isFinished()) {
-        timer.timeOut();
-      }
+        timer.timeOut()}
+
 
       for (let box of boxes) {
         box.show();
@@ -629,7 +630,7 @@ function draw() {
         let progress = (millis() - imageStartTime1) / 이미지전환시간;
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
-          image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
+          image(buttonWait,width / 2 + 117, height / 2 + 184+20);
           image(dataChecking, width / 2 + 11, height / 2);
         }
         imageLogoRotation = progress * TWO_PI;
@@ -666,7 +667,7 @@ function draw() {
 
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
-          image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
+          image(buttonWait,width / 2 + 117, height / 2 + 184+20);
           image(dataChecking, width / 2 + 11, height / 2);
         }
         imageLogoRotation = progress * TWO_PI;
@@ -733,7 +734,7 @@ function draw() {
       rect(width / 2 - 240, height / 2 - 360, 272, 60);
       image(bar, width / 2, height / 2 - 330);
       textSize(35);
-      textAlign(CENTER, CENTER);
+      textAlign(CENTER, CENTER)
       text("5/9", width / 2 + 220, height / 2 - 330);
       //
 
@@ -761,7 +762,7 @@ function draw() {
       rect(width / 2 - 240, height / 2 - 360, 272 + 20 + 15, 60);
       image(bar, width / 2, height / 2 - 330);
       textSize(35);
-      textAlign(CENTER, CENTER);
+      textAlign(CENTER, CENTER)
       text("6/9", width / 2 + 220, height / 2 - 330);
       //
 
@@ -785,7 +786,7 @@ function draw() {
       rect(width / 2 - 240, height / 2 - 360, 272 + 40 + 15, 60);
       image(bar, width / 2, height / 2 - 330);
       textSize(35);
-      textAlign(CENTER, CENTER);
+      textAlign(CENTER, CENTER)
       text("7/9", width / 2 + 220, height / 2 - 330);
 
       if (timer.isLessThan(4)) {
@@ -808,7 +809,7 @@ function draw() {
       rect(width / 2 - 240, height / 2 - 360, 272 + 60 + 15, 60);
       image(bar, width / 2, height / 2 - 330);
       textSize(35);
-      textAlign(CENTER, CENTER);
+      textAlign(CENTER, CENTER)
       text("8/9", width / 2 + 220, height / 2 - 330);
 
       if (timer.isLessThan(4)) {
@@ -835,8 +836,8 @@ function draw() {
       image(교수님, width / 2, height / 2 + 20);
 
       if (!C && timer.isFinished()) {
-        timer.timeOut();
-      }
+        timer.timeOut()}
+
 
       for (let box of boxes) {
         box.show();
@@ -854,7 +855,7 @@ function draw() {
 
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
-          image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
+          image(buttonWait,width / 2 + 117, height / 2 + 184+20);
           image(dataChecking, width / 2 + 11, height / 2);
         }
         imageLogoRotation = progress * TWO_PI;
@@ -889,7 +890,7 @@ function draw() {
         let progress = (millis() - imageStartTime2) / 이미지전환시간;
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
-          image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
+          image(buttonWait,width / 2 + 117, height / 2 + 184+20);
           image(현재이미지, width / 2 + 11, height / 2);
         }
         imageLogoRotation = progress * TWO_PI;
@@ -1116,15 +1117,15 @@ function mouseClicked() {
     }
   }
   if (state == 10) {
-    if (!문제8다음버튼) {
-      문제8다음버튼 = true;
-    } else {
+    if(!문제8다음버튼){
+      문제8다음버튼 = true
+    }else{
       //문제9
       if (
         mouseX < width / 2 + 115 + 35 &&
         mouseX > width / 2 + 115 - 55 &&
-        mouseY < height / 2 + 205 + 20 &&
-        mouseY > height / 2 + 205 - 44 + 20
+        mouseY < height / 2 + 205+20 &&
+        mouseY > height / 2 + 205 - 44+20
       ) {
         timer.stop();
         if (successPopupFlag || failedPopupFlag) {
@@ -1148,24 +1149,84 @@ function mouseClicked() {
         }
       }
     }
+    
   }
-
-  if (state == 4 || state == 5 || state == 10) {
-    if (
-      mouseX < width / 2 + 115 + 35 &&
-      mouseX > width / 2 + 115 - 55 &&
-      mouseY < height / 2 + 205 + 40 &&
-      mouseY > height / 2 + 205 - 24
-    ) {
+  
+  // if (state == 4 || state == 5 || state == 10) {
+  //   if (mouseX < width / 2 + 115 + 35 &&
+  //     mouseX > width / 2 + 115 - 55 &&
+  //     mouseY < height / 2 + 205 + 40 &&
+  //     mouseY > height / 2 + 205 - 24) {
+  //   C = true;
+  //   } else {
+  //   C= false;
+  //   }
+  //   }
+    
+    if (state == 4 || state == 5 || state == 10) {
+      if (mouseX < width / 2 + 115 + 35 &&
+        mouseX > width / 2 + 115 - 55 &&
+        mouseY < height / 2 + 205 + 40 &&
+        mouseY > height / 2 + 205 - 24) {
       C = true;
-    }
-  } else {
-    C = false;
-  }
+      }
+      }
+      else{C = false}
+    
+
+
 } //**************************************여기가 mouseclicked() 끝입니다!!!
 
 //==========================================================================
+//==========================================================================
+//==========================================================================
+//==========================================================================
 
+// if (문제4다음버튼 && state == 6) {
+//   if (
+//     mouseX > width / 2 + 510 - 41 &&
+//     mouseX < width / 2 + 510 + 41 &&
+//     mouseY > height / 2 + 350 - 17 &&
+//     mouseY < height / 2 + 350 + 17
+//   ) {
+//     문제5다음버튼 = true;
+//     timer = new Timer(11000);
+//   }
+// }
+// if (문제5다음버튼 && state == 7) {
+//   if (
+//     mouseX > width / 2 + 500 &&
+//     mouseX < width / 2 + 520 &&
+//     mouseY > height / 2 + 360 &&
+//     mouseY < height / 2 + 400
+//   ) {
+//     문제6다음버튼 = true;
+//     timer = new Timer(11000);
+//   }
+// }
+// if (문제6다음버튼 && state == 8) {
+//   if (
+//     mouseX > width / 2 + 500 &&
+//     mouseX < width / 2 + 520 &&
+//     mouseY > height / 2 + 360 &&
+//     mouseY < height / 2 + 400
+//   ) {
+//     문제7다음버튼 = true;
+//     timer = new Timer(11000);
+//   }
+// }
+// if (문제7다음버튼 && state == 9) {
+//   문제8다음버튼 = true;
+//   timer = new Timer(11000);
+// }
+// if (문제8다음버튼 && state == 10) {
+//   문제9다음버튼 = true;
+//   timer = new Timer(11000);
+// }
+
+//==========================================================================
+//==========================================================================
+//==========================================================================
 //==========================================================================
 
 function handleSubmit() {
@@ -1215,3 +1276,18 @@ function initializeBoxes() {
     box.active = false;
   }
 }
+
+// function Rotation() {
+//   rotationStartTime = millis();
+//   if (millis() - rotationStartTime < rotationDuration) {
+//     let progress = (millis() - rotationStartTime) / rotationDuration;
+//     logoRotation = progress * TWO_PI; // 0에서 2π까지 회전
+//   }
+//   push();
+//   translate(width / 2, height / 2 - 30);
+//   rotate(logoRotation);
+//   image(logo, 0, 0); // 적절한 크기로 조정
+//   pop();
+
+// }
+//====================================================
