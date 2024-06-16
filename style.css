@@ -6,3 +6,11 @@ html, body {
 canvas {
   display: block;
 }
+
+input {
+  cursor: url('choice2/mousehand.png'), auto;
+}
+
+button {
+  cursor: url('choice2/mousehand.png'), auto;
+}

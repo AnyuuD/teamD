@@ -329,7 +329,7 @@ function setup() {
 
   // q2
   q2 = new Q1(
-    "저는 로봇입니다.",
+    ["저는 로봇입니다.", "저는로봇입니다."],
     textDisabledImg,
     disabledImg,
     abledImg,
@@ -342,6 +342,7 @@ function setup() {
 
   //--------------------채현추가
   setInterval(changeImage, interval);
+  noCursor();
 }
 
 function draw() {
@@ -370,7 +371,6 @@ function draw() {
           if (화이팅버튼) state = 1;
         }
       }
-      noCursor();
       cursorChange();
       break;
 
@@ -888,7 +888,6 @@ function draw() {
         clickedBoxes.length == 3
       ) {
       }
-
       if (timer.isLessThan(3)) {
         image(popUpRed, 180, 650); // 남은 시간이 3초 이하일 때
       } else {
@@ -919,7 +918,7 @@ function draw() {
       if (!this.state11StartTime) {
         this.state11StartTime = millis(); // case 11에 진입 시 시작 시간 초기화
       }
-      image(bg, width / 2, height / 2);
+      image(성명입력_background, width / 2, height / 2);
       image(성명입력_imnotaRobot, width / 2 + 30, height / 2 + 100);
       image(결과_로딩창, width / 2, height / 2);
 
