@@ -228,6 +228,18 @@ function cursorChange() {
       }
     }
   }
+  if (state == 11) {
+    onButton = false;
+  }
+
+  if (state == 12) {
+    if (1000 < mouseX && mouseX < 1225 && 700 < mouseY && mouseY < 770) {
+      onButton = true;
+    } else {
+      onButton = false;
+    }
+  }
+
   if (onButton) {
     cursor("choice2/mousehand.png");
   } else {

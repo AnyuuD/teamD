@@ -162,7 +162,7 @@ class Q1 {
     const inputY = this.input.position().y;
 
     const buttonX = inputX + this.input.width + 80;
-    const buttonY = inputY;
+    const buttonY = inputY + 20;
 
     // 버튼 클릭 이벤트
     if (
