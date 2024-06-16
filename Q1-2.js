@@ -166,7 +166,7 @@ class Q1 {
 
     // 버튼 클릭 이벤트
     if (
-      mx > buttonX - 40 &&
+      mx > buttonX - 60 &&
       mx < buttonX + buttonWidth - 40 &&
       my > buttonY - 30 &&
       my < buttonY + buttonHeight - 20

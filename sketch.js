@@ -29,6 +29,7 @@ let song;
 let soundeffect;
 let soundeffect_isplayed = false;
 let reloadButton;
+let final_timer; 
 
 //------------ 채현 추가
 let clickSound;
@@ -955,7 +956,7 @@ function draw() {
       let current_time = millis();
       logo_angle = ((current_time - startTime) / 2000) * 360;
       push();
-      translate(width / 2 + 11, height / 2 - 20);
+      translate(width / 2, height / 2 - 20);
       rotate(radians(logo_angle));
       image(결과_로딩, 0, 0);
       pop();
@@ -1002,6 +1003,13 @@ function draw() {
         text("이번엔", 1110, 600);
         text("로봇 도전?", 1110, 650);
       }
+
+      if (!final_timer) {    // 25초 후 자동으로 페이지 새로고침
+        final_timer = millis();
+      } else if (millis() - final_timer > 25000) {
+        location.reload();
+      }
+
       noCursor();
       cursorChange();
       break;
