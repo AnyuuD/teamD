@@ -162,14 +162,14 @@ class Q1 {
     const inputY = this.input.position().y;
 
     const buttonX = inputX + this.input.width + 80;
-    const buttonY = inputY + 20;
+    const buttonY = inputY;
 
     // 버튼 클릭 이벤트
     if (
-      mx > buttonX - 40 &&
-      mx < buttonX + buttonWidth - 40 &&
+      mx > buttonX - 80 &&
+      mx < buttonX + buttonWidth - 60 &&
       my > buttonY - 30 &&
-      my < buttonY + buttonHeight - 20
+      my < buttonY + buttonHeight
     ) {
       if (!this.buttonActivated) {
         // 그린 버튼 클릭 (확인 버튼이 아직 클릭되지 않은 경우)
