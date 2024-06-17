@@ -28,12 +28,12 @@ class Q1 {
     this.currentPopupText = "";
 
     this.input = createInput();
-    this.input.position(439, 503);
+    this.input.position(windowWidth / 2 - 200, 503);
     this.input.size(298, 38);
     this.input.style("font-size", "20px");
 
-    this.buttonX = this.input.x + this.input.width + 60;
-    this.buttonY = this.input.y + 20;
+    this.buttonX = width / 2 + 160; // 중앙을 기준으로 위치 조정
+    this.buttonY = height / 2 + 108;
     this.isVerified = false;
     this.overlayOpacity = 0;
     this.buttonActivated = false; // 확인 버튼이 클릭되었는지 여부
@@ -129,6 +129,10 @@ class Q1 {
   checkCaptcha() {
     const enteredText = this.input.value();
 
+    if (enteredText === "") {
+      return; // 아무것도 입력되지 않은 경우 아무 동작도 하지 않음
+    }
+
     if (this.correctAnswers.includes(enteredText)) {
       score += 5.5; // 점수 5점 추가
       this.popUp = this.popUpS; // 올바른 텍스트 팝업
@@ -154,27 +158,13 @@ class Q1 {
   }
 
   handleClick(mx, my) {
-    let buttonWidth = this.buttonGreenT.width; // 클릭 범위 증가 해제함
-    let buttonHeight = this.buttonGreenT.height; // 만약 증가시키려면 이 코드들에 +20정도
-
-    // HTML 입력 요소와 p5.js 캔버스의 좌표 체계 간 차이를 해결
-    const inputX = this.input.position().x;
-    const inputY = this.input.position().y;
-
-    const buttonX = inputX + this.input.width + 80;
-    const buttonY = inputY + 20;
-
     // 버튼 클릭 이벤트
-    if (
-      mx > buttonX - 60 &&
-      mx < buttonX + buttonWidth - 40 &&
-      my > buttonY - 30 &&
-      my < buttonY + buttonHeight - 20
-    ) {
+
+    if (mx >= 759 && mx <= 819 && my >= 495 && my <= 535) {
       if (!this.buttonActivated) {
-        // 그린 버튼 클릭 (확인 버튼이 아직 클릭되지 않은 경우)
+        // 그린 버튼 클릭 (확인 버튼이 아직 클릭되지 않은 경우)(x >= 759 && x <= 819 && y >= 495 && y <= 535)
         this.checkCaptcha();
-      } else if (this.showPinkButton) {
+      } else if (this.showPinkButton && this.checkCaptcha) {
         // 핑크 버튼 클릭
         this.nextButtonClicked = true;
         return true; // 핑크 버튼이 클릭되면 true 반환
