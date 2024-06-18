@@ -103,6 +103,8 @@ let currentImage = "A";
 
 let C = false;
 
+let clickable = true;
+
 ///////////////////////////////////////
 
 let state = 0; // 스위치 단계, 점수, 타이머
@@ -454,7 +456,7 @@ function draw() {
 
     case 4: //전반부 문제3
       q2.input.hide();
-
+      
       //bar문제3
       rectMode(CORNER);
       fill(255, 79, 216);
@@ -463,10 +465,11 @@ function draw() {
       textSize(35);
       text("3/9", width / 2 + 220, height / 2 - 330);
       //
-
+   
       image(bg, width / 2, height / 2);
       image(푸들, width / 2, height / 2 + 20);
 
+     
       if (!C && timer.isFinished()) {
         timer.timeOut();
       }
@@ -474,6 +477,8 @@ function draw() {
       for (let box of boxes) {
         box.show();
       }
+
+
       if (successPopupFlag) {
         image(successPopup1, 1003, 178, 337, 323);
         image(resultHuman, 858 + 158, 493 + 76);
@@ -486,6 +491,7 @@ function draw() {
         let progress = (millis() - imageStartTime) / 이미지전환시간;
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
+          clickable =false;
           image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
           image(현재이미지, width / 2 + 11, height / 2);
         }
@@ -497,6 +503,7 @@ function draw() {
         pop();
 
         if (elapsedTime > 이미지전환시간) {
+        clickable = true
           image(dataComplete, width / 2 + 11, height / 2);
           image(logoImage, width / 2 + 11, height / 2 - 20);
 
@@ -506,7 +513,7 @@ function draw() {
             image(buttonNextD, width / 2 + 117, height / 2 + 184 + 20);
           }
 
-          console.log("현재 millis 값:", millis());
+         // console.log("현재 millis 값:", millis());
         }
         //------------------------------------------------------
       }
@@ -522,6 +529,7 @@ function draw() {
         let progress = (millis() - imageStartTime) / 이미지전환시간;
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
+          clickable = false;
           image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
           image(현재이미지, width / 2 + 11, height / 2);
         }
@@ -533,6 +541,7 @@ function draw() {
         pop();
 
         if (elapsedTime > 이미지전환시간) {
+          clickable = true;
           현재이미지 = dataComplete;
           image(현재이미지, width / 2 + 11, height / 2);
           image(logoImage, width / 2 + 11, height / 2 - 20);
@@ -542,7 +551,7 @@ function draw() {
             image(buttonNextD, width / 2 + 117, height / 2 + 184 + 20);
           }
 
-          console.log("현재 millis 값:", millis());
+          //console.log("현재 millis 값:", millis());
         }
       }
       //------------------------------------------------------
@@ -612,6 +621,7 @@ function draw() {
         let progress = (millis() - imageStartTime1) / 이미지전환시간;
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
+          clickable =false;
           image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
           image(dataChecking, width / 2 + 11, height / 2);
         }
@@ -622,6 +632,7 @@ function draw() {
         image(logoImage, 0, 0); // 적절한 크기로 조정
         pop();
         if (elapsedTime > 이미지전환시간) {
+          clickable =true;
           현재이미지 = dataComplete;
           image(현재이미지, width / 2 + 11, height / 2);
           image(logoImage, width / 2 + 11, height / 2 - 20);
@@ -632,7 +643,7 @@ function draw() {
             image(buttonNextD, width / 2 + 117, height / 2 + 184 + 20);
           }
 
-          console.log("현재 millis 값:", millis());
+         // console.log("현재 millis 값:", millis());
         }
         //------------------------------------------------------
       }
@@ -649,6 +660,7 @@ function draw() {
 
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
+          clickable = false;
           image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
           image(dataChecking, width / 2 + 11, height / 2);
         }
@@ -660,6 +672,7 @@ function draw() {
         pop();
 
         if (elapsedTime > 이미지전환시간) {
+          clickable = true;
           image(dataComplete, width / 2 + 11, height / 2);
           image(logoImage, width / 2 + 11, height / 2 - 20);
           if (currentImage === "A") {
@@ -667,7 +680,7 @@ function draw() {
           } else {
             image(buttonNextD, width / 2 + 117, height / 2 + 184 + 20);
           }
-          console.log("현재 millis 값:", millis());
+         // console.log("현재 millis 값:", millis());
         }
       }
       //------------------------------------------------------
@@ -696,6 +709,7 @@ function draw() {
       } // 타이머
       if (문제4다음버튼) {
         C = false;
+        clickable = true;
         state = 6;
       }
 
@@ -837,6 +851,7 @@ function draw() {
 
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
+          clickable =false;
           image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
           image(dataChecking, width / 2 + 11, height / 2);
         }
@@ -848,6 +863,7 @@ function draw() {
         pop();
 
         if (elapsedTime > 이미지전환시간) {
+          clickable =true;
           image(dataComplete, width / 2 + 11, height / 2);
           image(logoImage, width / 2 + 11, height / 2 - 20);
           if (currentImage === "A") {
@@ -855,7 +871,7 @@ function draw() {
           } else {
             image(buttonNextD, width / 2 + 117, height / 2 + 184 + 20);
           }
-          console.log("현재 millis 값:", millis());
+         // console.log("현재 millis 값:", millis());
         }
 
         //------------------------------------------------------
@@ -872,6 +888,7 @@ function draw() {
         let progress = (millis() - imageStartTime2) / 이미지전환시간;
         //-----------------------------------------------------
         if (elapsedTime < 이미지전환시간) {
+          clickable =false;
           image(buttonWait, width / 2 + 117, height / 2 + 184 + 20);
           image(현재이미지, width / 2 + 11, height / 2);
         }
@@ -883,6 +900,7 @@ function draw() {
         pop();
 
         if (elapsedTime > 이미지전환시간) {
+          clickable =true;
           image(dataComplete, width / 2 + 11, height / 2);
           image(logoImage, width / 2 + 11, height / 2 - 20);
           if (currentImage === "A") {
@@ -890,7 +908,7 @@ function draw() {
           } else {
             image(buttonNextD, width / 2 + 117, height / 2 + 184 + 20);
           }
-          console.log("현재 millis 값:", millis());
+         // console.log("현재 millis 값:", millis());
         }
       }
       //------------------------------------------------------
@@ -1046,6 +1064,7 @@ function mouseClicked() {
   }
   if (문제2다음버튼 && state == 4) {
     //문제3
+    if (clickable) {
     if (
       mouseX < width / 2 + 115 + 35 &&
       mouseX > width / 2 + 115 - 55 &&
@@ -1053,7 +1072,9 @@ function mouseClicked() {
       mouseY > height / 2 + 205 - 44 + 20
     ) {
       timer.stop();
+    
       if (successPopupFlag || failedPopupFlag) {
+        
         initializeBoxes();
         문제3다음버튼 = true;
         timer = new Timer(11000);
@@ -1075,9 +1096,11 @@ function mouseClicked() {
       }
     }
   }
+  }
 
   if (문제3다음버튼 && state == 5) {
     //문제4
+    if (clickable) {
     if (
       mouseX < width / 2 + 115 + 35 &&
       mouseX > width / 2 + 115 - 55 &&
@@ -1104,12 +1127,14 @@ function mouseClicked() {
           failedPopupFlag = true;
         }
       }
+      }
     }
   }
   if (state == 10) {
     if (!문제8다음버튼) {
       문제8다음버튼 = true;
     } else {
+      if (clickable) {
       //문제9
       if (
         mouseX < width / 2 + 115 + 35 &&
@@ -1139,18 +1164,9 @@ function mouseClicked() {
         }
       }
     }
+    }
   }
 
-  // if (state == 4 || state == 5 || state == 10) {
-  //   if (mouseX < width / 2 + 115 + 35 &&
-  //     mouseX > width / 2 + 115 - 55 &&
-  //     mouseY < height / 2 + 205 + 40 &&
-  //     mouseY > height / 2 + 205 - 24) {
-  //   C = true;
-  //   } else {
-  //   C= false;
-  //   }
-  //   }
 
   if (state == 4 || state == 5 || state == 10) {
     if (
@@ -1164,6 +1180,11 @@ function mouseClicked() {
   } else {
     C = false;
   }
+
+
+     
+
+
 } //**************************************여기가 mouseclicked() 끝입니다!!!
 
 //==========================================================================
